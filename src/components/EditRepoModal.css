@@ -1,0 +1,9 @@
+.edit-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form-field {
+    width: 100%;
+}
