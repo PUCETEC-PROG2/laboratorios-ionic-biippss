@@ -84,7 +84,7 @@ const Tab2: React.FC = () => {
             labelPlacement="floating"
             placeholder="Ingrese el nombre del repositorio"
             value={repositoryData.name}
-            onIonChange={(e) => setRepositoryData({ ...repositoryData, name: e.detail.value ?? "" })}
+            onIonInput={(e) => setRepositoryData((prev) => ({ ...prev, name: (e.target as HTMLIonInputElement).value?.toString() ?? "" }))}
           />
           <IonTextarea
             className='form-field'
@@ -92,7 +92,7 @@ const Tab2: React.FC = () => {
             labelPlacement='floating'
             placeholder='Ingrese la descripción del repositorio'
             value={repositoryData.description}
-            onIonChange={(e) => setRepositoryData({ ...repositoryData, description: e.detail.value ?? "" })}
+            onIonInput={(e) => setRepositoryData((prev) => ({ ...prev, description: (e.target as HTMLIonTextareaElement).value?.toString() ?? "" }))}
             rows={6}
           />
           {errorMsg !== "" && <IonText color="danger"><p>{errorMsg}</p></IonText>}
